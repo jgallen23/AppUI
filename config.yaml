@@ -13,8 +13,6 @@ output_dir: 'lib'
       #- 'src/stylesheets/external/datePicker.css'
 js:
   app:
-    plain: True
-    auto_version: False
     files:
       - 'src/scripts/console.js'
       - 'src/scripts/external/xui.js'
@@ -24,8 +22,6 @@ js:
       - 'src/scripts/Controller.js'
       - 'src/scripts/Model.js'
   app_lawnchair:
-    plain: True
-    auto_version: False
     inherit: 'app'
     files:
       - 'external/lawnchair/src/Lawnchair.js'
