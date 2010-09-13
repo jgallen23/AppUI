@@ -1,0 +1,66 @@
+output_dir: 'lib'
+#css:
+  #jga:
+    #plain: True
+    #auto_version: False
+    #files:
+      #- 'src/stylesheets/common.css'
+      #- 'src/stylesheets/modules.css'
+  #datepicker:
+    #plain: True
+    #auto_version: False
+    #files:
+      #- 'src/stylesheets/external/datePicker.css'
+js:
+  app:
+    plain: True
+    auto_version: False
+    files:
+      - 'src/scripts/console.js'
+      - 'src/scripts/external/xui.js'
+      - 'src/scripts/external/Class.js'
+      - 'src/scripts/browser.js'
+      - 'src/scripts/constants.js'
+      - 'src/scripts/Controller.js'
+      - 'src/scripts/Model.js'
+  app_lawnchair:
+    plain: True
+    auto_version: False
+    inherit: 'app'
+    files:
+      - 'external/lawnchair/src/Lawnchair.js'
+      - 'external/lawnchair/src/adaptors/LawnchairAdaptorHelpers.js'
+      - 'external/lawnchair/src/adaptors/WebkitSQLiteAdaptor.js'
+      - 'src/scripts/LawnchairModelData.js'
+  #jga:
+    #plain: True
+    #auto_version: False
+    #files:
+      #- 'src/scripts/external/jquery-1.4.2.min.js'
+      #- 'src/scripts/external/lowpro.jquery.js'
+      #- 'src/scripts/jga.core.js'
+      #- 'src/scripts/jga.ui.js'
+      #- 'src/scripts/utilities/arrays.js'
+      #- 'src/scripts/plugins/prettydate.js'
+      #- 'src/scripts/plugins/template.js'
+      #- 'src/scripts/plugins/tooltip.js'
+      #- 'src/scripts/plugins/textboxhint.js'
+      #- 'src/scripts/plugins/slider.js'
+      #- 'src/scripts/plugins/querystring.js'
+  #datepicker:
+    #plain: True
+    #auto_version: False
+    #files:
+      #- 'src/scripts/external/date.js'
+      #- 'src/scripts/external/jquery.datePicker.js'
+  #cookies:
+    #plain: True
+    #auto_version: False
+    #files:
+      #- 'src/scripts/utilities/cookies.js'
+  #sitelife:
+    #plain: True
+    #auto_version: False
+    #files:
+      #- 'src/scripts/plugins/sitelife.js'
+

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+python external/uimin/uimin.py config.yaml
