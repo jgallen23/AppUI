@@ -1,0 +1,3 @@
+[submodule "external/lawnchair"]
+	path = external/lawnchair
+	url = git://github.com/jgallen23/lawnchair.git
