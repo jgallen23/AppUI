@@ -1,3 +1,6 @@
 [submodule "external/lawnchair"]
 	path = external/lawnchair
 	url = git://github.com/jgallen23/lawnchair.git
+[submodule "external/uimin"]
+	path = external/uimin
+	url = git://github.com/jgallen23/uimin.git
