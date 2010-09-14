@@ -14,6 +14,7 @@ output_dir: 'lib'
 js:
   app:
     files:
+      - 'src/scripts/core.js'
       - 'src/scripts/console.js'
       - 'src/scripts/external/xui.js'
       - 'src/scripts/external/Class.js'
