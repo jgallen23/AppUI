@@ -1,5 +1,5 @@
 if (browser.isMobile) {
-	INPUT_EVENT = "click";
+	INPUT_EVENT = "touchstart";
 	INPUT_START_EVENT = "touchstart";
 	INPUT_MOVE_EVENT = "touchmove";
 	INPUT_END_EVENT = "touchend";

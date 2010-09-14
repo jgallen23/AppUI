@@ -967,22 +967,22 @@ var cache = {};
 });
 
 // patched orientation support - Andriod 1 doesn't have native onorientationchange events
-if (!('onorientationchange' in document.body)) {
-  (function () {
-    var w = window.innerWidth, h = window.innerHeight;
-    
-    xui(window).on('resize', function () {
-      var portraitSwitch = (window.innerWidth < w && window.innerHeight > h) && (window.innerWidth < window.innerHeight),
-          landscapeSwitch = (window.innerWidth > w && window.innerHeight < h) && (window.innerWidth > window.innerHeight);
-      if (portraitSwitch || landscapeSwitch) {
-        window.orientation = portraitSwitch ? 0 : 90; // what about -90? Some support is better than none
-        $('body').fire('orientationchange'); // will this bubble up?
-        w = window.innerWidth;
-        h = window.innerHeight;
-      }
-    });
-  })();
-}
+/*if (true || !('onorientationchange' in document.body)) {*/
+/*(function () {*/
+/*var w = window.innerWidth, h = window.innerHeight;*/
+
+/*xui(window).on('resize', function () {*/
+/*var portraitSwitch = (window.innerWidth < w && window.innerHeight > h) && (window.innerWidth < window.innerHeight),*/
+/*landscapeSwitch = (window.innerWidth > w && window.innerHeight < h) && (window.innerWidth > window.innerHeight);*/
+/*if (portraitSwitch || landscapeSwitch) {*/
+/*window.orientation = portraitSwitch ? 0 : 90; // what about -90? Some support is better than none*/
+/*x$('body').fire('orientationchange'); // will this bubble up?*/
+/*w = window.innerWidth;*/
+/*h = window.innerHeight;*/
+/*}*/
+/*});*/
+/*})();*/
+/*}*/
 xui.extend({
     nativeAnimate: function (options, callback) {
         this.animationStack = [];
