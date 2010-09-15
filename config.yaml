@@ -20,7 +20,9 @@ js:
       - 'src/scripts/external/Class.js'
       - 'src/scripts/browser.js'
       - 'src/scripts/constants.js'
+      - 'src/scripts/EventManager.js'
       - 'src/scripts/Controller.js'
+      - 'src/scripts/View.js'
       - 'src/scripts/Model.js'
   app_lawnchair:
     inherit: 'app'
