@@ -3,9 +3,15 @@ var EventManager = Class.extend({
 
 	},
 	bind: function(event, callback) {
-		this.callbacks = this.callbacks || {}
-		this.callbacks[event] = this.callbacks[event] || [];
-		this.callbacks[event].push(callback);
+		if (typeof event === "object") {
+			for (var key in event) {
+				this.bind(key, event[key]);
+			}
+		} else {
+			this.callbacks = this.callbacks || {}
+			this.callbacks[event] = this.callbacks[event] || [];
+			this.callbacks[event].push(callback);
+		}
 		return this;
 	},
 	trigger: function(name, data) {
