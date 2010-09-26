@@ -15,6 +15,7 @@ js:
   app:
     files:
       - 'src/scripts/core.js'
+      - 'src/scripts/array.js'
       - 'src/scripts/console.js'
       - 'src/scripts/external/xui.js'
       - 'src/scripts/external/Class.js'
@@ -22,6 +23,7 @@ js:
       - 'src/scripts/constants.js'
       - 'src/scripts/EventManager.js'
       - 'src/scripts/Controller.js'
+      - 'src/scripts/DataProvider.js'
       - 'src/scripts/View.js'
       - 'src/scripts/Model.js'
   app_lawnchair:

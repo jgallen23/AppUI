@@ -1,4 +1,4 @@
-var LawnchairData = Class.extend({
+var LawnchairData = DataProvider.extend({
 	init: function(key) {
 		this.data = new Lawnchair(key);
 	},
