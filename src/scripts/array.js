@@ -9,7 +9,7 @@ Array.prototype.indexOf = function( v, b, s ) {
 // Array.insert( index, value ) - Insert value at index, without overwriting existing keys
 Array.prototype.insert = function( i, v ) {
 	if (this.length == 0)
-		return this.push(v);
+		return [v];
 	if( i>=0 ) {
 		var a = this.slice(), b = a.splice( i );
 		a[i] = v;

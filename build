@@ -1,3 +1,2 @@
 #!/bin/sh
-
-python external/uimin/uimin.py config.yaml
+python `dirname $0`/external/uimin/uimin.py `dirname $0`/config.yaml
