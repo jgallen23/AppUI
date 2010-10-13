@@ -21,6 +21,7 @@ js:
       - 'src/scripts/external/Class.js'
       - 'src/scripts/browser.js'
       - 'src/scripts/constants.js'
+      - 'src/scripts/template.js'
       - 'src/scripts/EventManager.js'
       - 'src/scripts/Controller.js'
       - 'src/scripts/DataProvider.js'
