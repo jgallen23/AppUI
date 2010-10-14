@@ -9,7 +9,6 @@ var LawnchairData = DataProvider.extend({
 		this.data.get(id, cb);
 	},
 	save: function(obj, cb) {
-		obj.key = obj.id;
 		this.data.save(obj, cb)
 	},
 	remove: function(obj, cb) {
