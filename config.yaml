@@ -26,6 +26,7 @@ js:
       - 'src/scripts/Controller.js'
       - 'src/scripts/DataProvider.js'
       - 'src/scripts/View.js'
+      - 'src/scripts/templateView.js'
       - 'src/scripts/Model.js'
   app_lawnchair:
     inherit: 'app'
