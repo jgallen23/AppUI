@@ -10,5 +10,15 @@ var View = EventManager.extend({
 		for (var i = 0; i < elements.length; i++) {
 			elements[i].addEventListener(eventName, f);
 		}
+	},
+	find: function(selector) {
+		return this.element.querySelector(selector);
+	},
+	findAll: function(selector) {
+		return this.element.querySelectorAll(selector);
+	},
+	remove: function() {
+		//TODO: unbind all events
+		this.element.innerHTML = "";
 	}
 });
