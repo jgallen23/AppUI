@@ -23,9 +23,9 @@ var Model = Class.extend({
 	},
 	_setProperty: function(prop, value) {
 		this._data[prop] = value;
-		this._propertySet(prop);
+		this._propertySet(prop, value);
 	},
-	_propertySet: function(prop) {
+	_propertySet: function(prop, value) {
 	},
 	__defineProperty__: function(key, getter, setter) {
 		this.__defineGetter__(key, getter);
