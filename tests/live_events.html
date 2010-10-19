@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title></title>
+		<script src="../lib/app.js" type="text/javascript"></script>
+		<script src="../src/scripts/View.js" type="text/javascript"></script>
+        <script>
+            var LiveEventView = View.extend({
+                useLiveClickEvents: true,
+                addHref: function() {
+                    var href = document.createElement("a");
+                    href.innerHTML = "Click Me";
+                    this.element.appendChild(href);
+                },
+                onClick: {
+                    live: function(e) {
+                        console.log(this);
+                        this.addHref();
+                        console.log("clicked");
+                    }
+                }
+            });
+        </script>
+
+	</head>
+	<body>
+        <div id="LiveEventView">
+            <a data-click="live">Click Me</a>
+        </div>
+        <script>
+            new LiveEventView("LiveEventView");
+        </script>
+	</body>
+</html>

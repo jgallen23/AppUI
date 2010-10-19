@@ -1,6 +1,14 @@
 var View = EventManager.extend({
 	init: function(elementId) {
 		this.element = document.getElementById(elementId);
+        if (this.useLiveClickEvents) {
+            var self = this;
+            this.element.addEventListener("click", function(e) {
+                if (self.onClick[e.target.getAttribute("data-click")]) {
+                    self.onClick[e.target.getAttribute("data-click")].call(self, e);
+                }
+            });
+        }
 	},
 	bindViewEvent: function(selector, eventName, f) {
 		this.bindElementEvent(this.element, selector, eventName, f);
@@ -20,5 +28,6 @@ var View = EventManager.extend({
 	remove: function() {
 		//TODO: unbind all events
 		this.element.innerHTML = "";
-	}
+    },
+    useLiveClickEvents: false
 });
