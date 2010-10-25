@@ -29,5 +29,11 @@ var View = EventManager.extend({
 		//TODO: unbind all events
 		this.element.innerHTML = "";
     },
-    useLiveClickEvents: false
+	useLiveClickEvents: false,
+	show: function() {
+		this.element.style.display = "block";
+	},
+	hide: function() {
+		this.element.style.display = "none";
+	}
 });
