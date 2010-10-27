@@ -35,5 +35,12 @@ var View = EventManager.extend({
 	},
 	hide: function() {
 		this.element.style.display = "none";
+	},
+	findParentWithAttribute: function(element, attribute) {
+		do {
+			if (element.getAttribute(attribute)) 
+				return element;
+			element = element.parentNode;
+		} while (element)
 	}
 });
