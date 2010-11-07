@@ -26,14 +26,13 @@ js:
       - 'src/scripts/Controller.js'
       - 'src/scripts/DataProvider.js'
       - 'src/scripts/View.js'
-      - 'src/scripts/templateView.js'
       - 'src/scripts/Model.js'
   app_lawnchair:
     inherit: 'app'
     files:
+      - 'external/lawnchair/src/adaptors/WebkitSQLiteAdaptor.js'
       - 'external/lawnchair/src/Lawnchair.js'
       - 'external/lawnchair/src/adaptors/LawnchairAdaptorHelpers.js'
-      - 'external/lawnchair/src/adaptors/WebkitSQLiteAdaptor.js'
       - 'src/scripts/LawnchairModelData.js'
   #jga:
     #plain: True

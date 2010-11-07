@@ -1,23 +1,10 @@
 var View = EventManager.extend({
-	init: function(elementId) {
-		this.element = document.getElementById(elementId);
-        if (this.useLiveClickEvents) {
-            var self = this;
-            this.element.addEventListener("click", function(e) {
-                if (self.onClick[e.target.getAttribute("data-click")]) {
-                    self.onClick[e.target.getAttribute("data-click")].call(self, e);
-                }
-            });
-        }
+	init: function(element) {
+		this.element = (typeof element === "string")?document.getElementById(element):element;
 	},
-	bindViewEvent: function(selector, eventName, f) {
-		this.bindElementEvent(this.element, selector, eventName, f);
-	},
-	bindElementEvent: function(element, selector, eventName, f) {
-		var elements = element.querySelectorAll(selector);
-		for (var i = 0; i < elements.length; i++) {
-			elements[i].addEventListener(eventName, f);
-		}
+	render: function(templateId, data) {
+		var tmp = template(templateId, data);
+		this.element.innerHTML = tmp;
 	},
 	find: function(selector) {
 		return this.element.querySelector(selector);
@@ -29,7 +16,6 @@ var View = EventManager.extend({
 		//TODO: unbind all events
 		this.element.innerHTML = "";
     },
-	useLiveClickEvents: false,
 	show: function() {
 		this.element.style.display = "block";
 	},

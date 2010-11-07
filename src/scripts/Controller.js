@@ -1,25 +1,31 @@
-var Controller = Class.extend({
-	init: function(element) {
-		this.element = element;
+var Controller = EventManager.extend({
+	useLiveClickEvents: true,
+	init: function(elementId) {
+		this.element = document.getElementById(elementId);
+		if (this.useLiveClickEvents) {
+            var self = this;
+            this.element.addEventListener("click", function(e) {
+                if (self.onClick[e.target.getAttribute("data-onClick")]) {
+                    self.onClick[e.target.getAttribute("data-onClick")].call(self, e);
+                }
+            });
+        }
+		this.view = new View(this.element);
 	},
-	bindClickEvents: function(obj) {
-		var self = this;
-		var $element = x$(this.element);
-		for (var key in obj) {
-			x$(key).on(INPUT_EVENT, self._clickEvent(obj[key]));
-		}
+	preventScrolling: function(e) {
+		e.preventDefault(); 
 	},
-	_clickEvent: function(f) {
-		var self = this;
-		return function() {
-			f.call(self);
-		}
+	enableScrolling: function() {
+		document.removeEventListener("touchmove", this.preventScrolling, false);
 	},
-	hide: function() {
-		this.element.setStyle("display", "none");
+	disableScrolling: function() {
+		document.addEventListener("touchmove", this.preventScrolling, false);
 	},
 	show: function() {
-		this.element.setStyle("display", "block");
+		this.view.show();
+	},
+	hide: function() {
+		this.view.hide();
 	},
     animate: function(properties, cb) {
 		var self = this;
