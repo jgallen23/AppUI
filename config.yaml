@@ -15,6 +15,7 @@ js:
   app:
     files:
       - 'src/scripts/core.js'
+      - 'src/scripts/elem.js'
       - 'src/scripts/array.js'
       - 'src/scripts/console.js'
       - 'src/scripts/external/xui.js'
@@ -27,13 +28,16 @@ js:
       - 'src/scripts/DataProvider.js'
       - 'src/scripts/View.js'
       - 'src/scripts/Model.js'
-  app_lawnchair:
+  app.lawnchair:
     inherit: 'app'
     files:
       - 'external/lawnchair/src/adaptors/WebkitSQLiteAdaptor.js'
       - 'external/lawnchair/src/Lawnchair.js'
       - 'external/lawnchair/src/adaptors/LawnchairAdaptorHelpers.js'
       - 'src/scripts/LawnchairModelData.js'
+  app.sortable:
+    files:
+      - 'src/scripts/SortableController.js'
   #jga:
     #plain: True
     #auto_version: False

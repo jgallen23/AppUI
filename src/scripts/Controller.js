@@ -4,8 +4,8 @@ var Controller = EventManager.extend({
 		this.element = document.getElementById(elementId);
 		if (this.useLiveClickEvents) {
             var self = this;
-            this.element.addEventListener("click", function(e) {
-                if (self.onClick[e.target.getAttribute("data-onClick")]) {
+            this.element.addEventListener(INPUT_EVENT, function(e) {
+                if (e.target.getAttribute('data-onClick') && self.onClick[e.target.getAttribute("data-onClick")]) {
                     self.onClick[e.target.getAttribute("data-onClick")].call(self, e);
                 }
             });
