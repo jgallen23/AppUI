@@ -2,9 +2,13 @@ var View = EventManager.extend({
 	init: function(element) {
 		this.element = (typeof element === "string")?document.getElementById(element):element;
 	},
-	render: function(templateId, data) {
+	renderAt: function(element, templateId, data) {
+		element = (typeof element === "string")?this.find(element):element;
 		var tmp = template(templateId, data);
-		this.element.innerHTML = tmp;
+		element.innerHTML = tmp;
+	},
+	render: function(templateId, data) {
+		this.renderAt(this.element, templateId, data);
 	},
 	find: function(selector) {
 		return this.element.querySelector(selector);
