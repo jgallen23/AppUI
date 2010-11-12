@@ -18,12 +18,21 @@ var SortableController = Controller.extend({
 			})(triggers[i])
 		}
 	},
+    _findIndex: function(node) {
+        var items = this.view.findAll("li");
+        for (var i = 0; i < items.length; i++) {
+            if (items[i] == node) {
+                return i;
+            }
+        };
+        return -1;
+    },
 	enableSorting: function(target, e) {
 		var self = this;
 		/*this.startY = (e.touches)?e.touches[0].clientY:e.clientY;*/
 		this.disableScrolling();
-		console.log(target);
 		this.selectedItem = target.parentNode;
+        this._itemOffset = this._findIndex(this.selectedItem); 
 		this.itemHeight = this.selectedItem.clientHeight;
 		this.element.style.webkitUserSelect = "none";	
 		var move = function(e) {
@@ -45,11 +54,15 @@ var SortableController = Controller.extend({
 		var clientY = (e.touches)?e.touches[0].clientY:e.clientY;
 		var offset = clientY - this.startY;
 		var itemOffset = Math.floor(offset/this.itemHeight);
+        var up = (clientY < (this.startY + (this._itemOffset * this.itemHeight)));
+        //console.log(offset, itemOffset, this._itemOffset, up);
 		if (itemOffset != this._itemOffset) {
 			this._moved = true;
-			var offsetNode = this.view.findAll('li')[itemOffset];
-			var item = target.parentNode;
-			this.element.insertBefore(this.selectedItem, offsetNode);
+			var offsetNode = this.view.findAll('li')[(up)?itemOffset:itemOffset+1];
+            if (up)
+                this.element.insertBefore(this.selectedItem, offsetNode);
+            else
+                this.element.insertBefore(this.selectedItem, offsetNode);
 			this._itemOffset = itemOffset;
 		}
 	}

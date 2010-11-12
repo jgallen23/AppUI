@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title></title>
+		<meta name = "viewport" content = "width = device-width, initial-scale = 1.0, user-scalable = no, maximum-scale = 1.0">
+		<script src="../lib/app.js"></script>
+		<script src="../src/scripts/Controller.js"></script>
+		<script src="../src/scripts/SortableController.js"></script>
+		<style>
+			.sorting { background: yellow; }
+			* { -webkit-user-select: none;}
+		</style>
+		<script>
+			var app = new Application();
+			app.bind("ready", function() {
+				var sort = new SortableController('Sort');
+
+			});
+		</script>
+	</head>
+	<body>
+		<h1>Sortable</h1>
+		<ul id="Sort">
+			<li>A<button data-onClick="trigger">Trigger</button></li>
+			<li>B<button data-onClick="trigger">Trigger</button></li>
+			<li>C<button data-onClick="trigger">Trigger</button></li>
+			<li>D<button data-onClick="trigger">Trigger</button></li>
+			<li>E<button data-onClick="trigger">Trigger</button></li>
+			<li>F<button data-onClick="trigger">Trigger</button></li>
+		</ul>
+	</body>
+</html>
