@@ -25,6 +25,7 @@ js:
       - 'src/scripts/template.js'
       - 'src/scripts/EventManager.js'
       - 'src/scripts/Controller.js'
+      - 'src/scripts/Application.js'
       - 'src/scripts/DataProvider.js'
       - 'src/scripts/View.js'
       - 'src/scripts/Model.js'
