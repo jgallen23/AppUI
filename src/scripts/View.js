@@ -22,9 +22,11 @@ var View = EventManager.extend({
     },
 	show: function() {
 		this.element.style.display = "block";
+		this.trigger("show");
 	},
 	hide: function() {
 		this.element.style.display = "none";
+		this.trigger("hide");
 	},
 	findParentWithAttribute: function(element, attribute) {
 		do {

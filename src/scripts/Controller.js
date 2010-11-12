@@ -23,9 +23,11 @@ var Controller = EventManager.extend({
 	},
 	show: function() {
 		this.view.show();
+		this.trigger("show");
 	},
 	hide: function() {
 		this.view.hide();
+		this.trigger("hide");
 	},
     animate: function(properties, cb) {
 		var self = this;
