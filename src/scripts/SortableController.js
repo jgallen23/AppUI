@@ -30,7 +30,8 @@ var SortableController = Controller.extend({
 	enableSorting: function(target, e) {
 		var self = this;
 		/*this.startY = (e.touches)?e.touches[0].clientY:e.clientY;*/
-		this.disableScrolling();
+		APP.disableScrolling();
+        self.trigger("start");
 		this.selectedItem = target.parentNode;
         this._itemOffset = this._findIndex(this.selectedItem); 
 		this.itemHeight = this.selectedItem.clientHeight;
@@ -39,7 +40,8 @@ var SortableController = Controller.extend({
 			self._mouseMove(target, e);
 		};
 		var up = function(e) {
-			self.enableScrolling();
+			APP.enableScrolling();
+            self.trigger('end');
 			if (self._moved)
 				self.trigger('sorted');
 			elem.removeClass(self.selectedItem, 'sorting');

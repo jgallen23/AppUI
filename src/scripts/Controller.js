@@ -12,15 +12,6 @@ var Controller = EventManager.extend({
         }
 		this.view = new View(this.element);
 	},
-	preventScrolling: function(e) {
-		e.preventDefault(); 
-	},
-	enableScrolling: function() {
-		document.removeEventListener("touchmove", this.preventScrolling, false);
-	},
-	disableScrolling: function() {
-		document.addEventListener("touchmove", this.preventScrolling, false);
-	},
 	show: function() {
 		this.view.show();
 		this.trigger("show");
