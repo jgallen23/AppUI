@@ -1,7 +1,7 @@
 var Controller = EventManager.extend({
 	useLiveClickEvents: true,
 	init: function(elementId) {
-		this.element = document.getElementById(elementId);
+		this.element = (typeof elementId === "string")?document.getElementById(elementId):elementId;
 		if (this.useLiveClickEvents) {
             var self = this;
             this.element.addEventListener(INPUT_EVENT, function(e) {
