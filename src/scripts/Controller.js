@@ -4,13 +4,18 @@ var Controller = EventManager.extend({
 		this.element = (typeof elementId === "string")?document.getElementById(elementId):elementId;
 		if (this.useLiveClickEvents) {
             var self = this;
-            this.element.addEventListener(INPUT_EVENT, function(e) {
+            var bind = function(e) {
                 if (e.target.getAttribute('data-onClick') && self.onClick[e.target.getAttribute("data-onClick")]) {
                     self.onClick[e.target.getAttribute("data-onClick")].call(self, e);
                 }
-            });
+            };
+			this.element.addEventListener(INPUT_EVENT, bind); 
+			self.bind("destroy", function() { console.log("remove");self.element.removeEventListener(INPUT_EVENT, bind) });
         }
 		this.view = new View(this.element);
+	},
+	destroy: function() {
+		this.trigger("destroy");
 	},
 	show: function() {
 		this.view.show();
