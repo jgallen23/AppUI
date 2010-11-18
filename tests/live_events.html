@@ -2,13 +2,13 @@
 	<head>
 		<title></title>
 		<script src="../lib/app.js" type="text/javascript"></script>
-		<script src="../src/scripts/View.js" type="text/javascript"></script>
+		<script src="../src/scripts/Controller.js" type="text/javascript"></script>
         <script>
-            var LiveEventView = View.extend({
-                useLiveClickEvents: true,
+            var LiveEventView = Controller.extend({
                 addHref: function() {
                     var href = document.createElement("a");
                     href.innerHTML = "Click Me";
+                    href.setAttribute("data-onClick", "live");
                     this.element.appendChild(href);
                 },
                 onClick: {
@@ -16,6 +16,9 @@
                         console.log(this);
                         this.addHref();
                         console.log("clicked");
+                    },
+                    destroy: function(e) {
+                        this.destroy();
                     }
                 }
             });
@@ -24,7 +27,8 @@
 	</head>
 	<body>
         <div id="LiveEventView">
-            <a data-click="live">Click Me</a>
+            <a data-onClick="live">Click Me</a>
+            <a data-onClick="destroy">Destroy</a>
         </div>
         <script>
             new LiveEventView("LiveEventView");

@@ -4,17 +4,22 @@ var Controller = EventManager.extend({
 		this.element = (typeof elementId === "string")?document.getElementById(elementId):elementId;
 		if (this.useLiveClickEvents) {
             var self = this;
-            var bind = function(e) {
-                if (e.target.getAttribute('data-onClick') && self.onClick[e.target.getAttribute("data-onClick")]) {
-                    self.onClick[e.target.getAttribute("data-onClick")].call(self, e);
-                }
-            };
-			this.element.addEventListener(INPUT_EVENT, bind); 
-			self.bind("destroy", function() { console.log("remove");self.element.removeEventListener(INPUT_EVENT, bind) });
+			this.element.addEventListener(INPUT_EVENT, this); 
         }
 		this.view = new View(this.element);
 	},
+	handleEvent: function(e) {
+		var self = this;
+		if (e.type == "click") {
+			if (e.target.getAttribute('data-onClick') && self.onClick[e.target.getAttribute("data-onClick")]) {
+				self.onClick[e.target.getAttribute("data-onClick")].call(self, e);
+			}
+		}
+	},
 	destroy: function() {
+		if (this.useLiveClickEvents) {
+			this.element.removeEventListener(INPUT_EVENT, this);
+		}
 		this.trigger("destroy");
 	},
 	show: function() {
