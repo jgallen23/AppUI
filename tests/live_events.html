@@ -16,6 +16,7 @@
                         console.log(this);
                         this.addHref();
                         console.log("clicked");
+                        trigger("customEvent");
                     },
                     destroy: function(e) {
                         this.destroy();
@@ -31,7 +32,10 @@
             <a data-onClick="destroy">Destroy</a>
         </div>
         <script>
-            new LiveEventView("LiveEventView");
+            var l = new LiveEventView("LiveEventView");
+            l.bind("customEvent", function() {
+                console.log("custom event");
+            });
         </script>
 	</body>
 </html>

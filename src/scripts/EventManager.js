@@ -43,5 +43,8 @@ var EventManager = Class.extend({
 		}
 	
 		return this;
-	}
+    },
+    handleEvent: function(e) {
+
+    }
 });
