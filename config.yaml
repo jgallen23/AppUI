@@ -18,7 +18,6 @@ js:
       - 'src/scripts/elem.js'
       - 'src/scripts/array.js'
       - 'src/scripts/console.js'
-      - 'src/scripts/external/xui.js'
       - 'src/scripts/external/Class.js'
       - 'src/scripts/browser.js'
       - 'src/scripts/constants.js'

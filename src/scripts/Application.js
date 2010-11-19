@@ -11,10 +11,16 @@ var Application = Controller.extend({
                 self.ready() 
             }
         }, false);
+		window.addEventListener("resize", function(e) {
+			self.resize();
+		});
 	},
 	ready: function() {
 		this.trigger("ready");
     },
+	resize: function(e) {
+		this.trigger("resize", [window.innerWidth, window.innerHeight]);
+	},
     preventScrolling: function(e) {
 		e.preventDefault(); 
 	},
