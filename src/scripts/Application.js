@@ -5,7 +5,7 @@ var Application = Controller.extend({
 		var self = this;
 
         window.addEventListener("load", function() { 
-            if (browser.isMobile) {
+            if (false && browser.isMobile) {
                 document.addEventListener("deviceready", function() { self.ready() }, false);
             } else {
                 self.ready() 
