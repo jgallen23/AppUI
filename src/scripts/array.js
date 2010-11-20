@@ -75,3 +75,7 @@ Array.prototype.extend = function(array) {
 		this.push(array[i]);
 	}
 }
+
+Array.prototype.last = function() {
+	return this[this.length - 1];
+}

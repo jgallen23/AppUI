@@ -5,16 +5,22 @@ var Application = Controller.extend({
 		var self = this;
 
         window.addEventListener("load", function() { 
-            if (browser.isMobile) {
+            if (false && browser.isMobile) {
                 document.addEventListener("deviceready", function() { self.ready() }, false);
             } else {
                 self.ready() 
             }
         }, false);
+		window.addEventListener("resize", function(e) {
+			self.resize();
+		});
 	},
 	ready: function() {
 		this.trigger("ready");
     },
+	resize: function(e) {
+		this.trigger("resize", [window.innerWidth, window.innerHeight]);
+	},
     preventScrolling: function(e) {
 		e.preventDefault(); 
 	},
