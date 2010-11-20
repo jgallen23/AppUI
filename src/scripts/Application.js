@@ -7,7 +7,7 @@ var Application = Controller.extend({
 
         window.addEventListener("load", function() { 
 			if (self.browser.isMobile) {
-				elem.addClass(document.body, "mobile");
+				elem.addClass(document.body, "Mobile");
 			}
             if (self.browser.isPhoneGap) {
                 document.addEventListener("deviceready", function() { self.ready() }, false);
