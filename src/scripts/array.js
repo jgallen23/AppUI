@@ -66,6 +66,10 @@ Array.prototype.remove = function(from, to) {
   return this.length;
 };
 
+Array.prototype.removeItem = function(item) {
+	return this.remove(this.indexOf(item));
+}
+
 Array.prototype.extend = function(array) {
 	for (var i = 0; i < array.length; i++) {
 		this.push(array[i]);

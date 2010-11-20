@@ -20,6 +20,7 @@ var Controller = EventManager.extend({
 		if (this.useLiveClickEvents) {
 			this.element.removeEventListener(INPUT_EVENT, this);
 		}
+		this._super();
 		this.trigger("destroy");
 	},
 	show: function() {

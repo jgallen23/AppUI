@@ -2,6 +2,9 @@ var EventManager = Class.extend({
 	init: function() {
 
 	},
+	destroy: function() {
+		this.callbacks = null;
+	},
 	bind: function(event, callback) {
 		if (typeof event === "object") {
 			for (var key in event) {
