@@ -2,10 +2,14 @@ var Application = Controller.extend({
 	init: function() {
         window.APP = this;
 		this._super.apply(arguments);
+		this.browser = new Browser();
 		var self = this;
 
         window.addEventListener("load", function() { 
-            if (false && browser.isMobile) {
+			if (self.browser.isMobile) {
+				elem.addClass(document.body, "mobile");
+			}
+            if (self.browser.isPhoneGap) {
                 document.addEventListener("deviceready", function() { self.ready() }, false);
             } else {
                 self.ready() 
