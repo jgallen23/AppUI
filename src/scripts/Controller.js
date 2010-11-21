@@ -24,6 +24,8 @@ var Controller = EventManager.extend({
 		this.trigger("destroy");
 	},
 	show: function() {
+		if (APP)
+			APP.currentController = this;
 		this.view.show();
 		this.trigger("show");
 	},
