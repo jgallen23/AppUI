@@ -1,4 +1,4 @@
-var Model = Class.extend({
+var Model = EventManager.extend({
 	init: function(initial) {
 		if (!this._data) this._data = {};
 		if (initial) {
@@ -26,6 +26,7 @@ var Model = Class.extend({
 		this._propertySet(prop, value);
 	},
 	_propertySet: function(prop, value) {
+		this.trigger("propertySet", [prop, value]);
 	},
 	__defineProperty__: function(key, getter, setter) {
 		this.__defineGetter__(key, getter);
