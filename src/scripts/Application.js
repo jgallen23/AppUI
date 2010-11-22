@@ -4,6 +4,7 @@ var Application = Controller.extend({
 		this._super.apply(arguments);
 		this.browser = new Browser();
 		var self = this;
+		this.data = {};
 
         window.addEventListener("load", function() { 
 			if (self.browser.isMobile) {
