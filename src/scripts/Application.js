@@ -6,21 +6,20 @@ var Application = Controller.extend({
 		var self = this;
 		this.data = {};
 
-        window.addEventListener("load", function() { 
-			if (self.browser.isMobile) {
-				elem.addClass(document.body, "Mobile");
-			}
-            if (self.browser.isPhoneGap) {
-                document.addEventListener("deviceready", function() { self.ready() }, false);
-            } else {
-                self.ready() 
-            }
-        }, false);
+		if (self.browser.isPhoneGap) {
+			document.addEventListener("deviceready", function() { self.ready() }, false);
+		} else {
+			window.addEventListener("load", function() { 
+				self.ready() 
+			}, false);
+		}
 		window.addEventListener("resize", function(e) {
 			self.resize();
 		});
 	},
 	ready: function() {
+		if (self.browser.isMobile)
+			elem.addClass(document.body, "Mobile");
 		this.trigger("ready");
     },
 	resize: function(e) {
