@@ -17,7 +17,7 @@ var View = EventManager.extend({
 		var items = this.element.querySelectorAll(selector);
 		if (f) {
 			for (var i = 0, c = items.length; i < c; i++) {
-				f(items[i]);
+				f(items[i], i);
 			}
 		}
 		return items;
