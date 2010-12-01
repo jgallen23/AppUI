@@ -18,7 +18,7 @@ var Application = Controller.extend({
 		});
 	},
 	ready: function() {
-		if (self.browser.isMobile)
+		if (this.browser.isMobile)
 			elem.addClass(document.body, "Mobile");
 		this.trigger("ready");
     },
