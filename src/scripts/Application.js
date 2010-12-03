@@ -10,11 +10,11 @@ var Application = Controller.extend({
 			document.addEventListener("deviceready", function() { self.ready() }, false);
 		} else {
 			window.addEventListener("load", function() { 
-				self.ready() 
+				self.ready();
 			}, false);
 		}
 		window.addEventListener("resize", function(e) {
-			self.resize();
+			self.resize(window.innerWidth, window.innerHeight);
 		});
 	},
 	ready: function() {
@@ -22,8 +22,8 @@ var Application = Controller.extend({
 			elem.addClass(document.body, "Mobile");
 		this.trigger("ready");
     },
-	resize: function(e) {
-		this.trigger("resize", [window.innerWidth, window.innerHeight]);
+	resize: function(width, height) {
+		this.trigger("resize", [width, height]);
 	},
     preventScrolling: function(e) {
 		e.preventDefault(); 
