@@ -62,8 +62,9 @@ Array.prototype.clone = function() {
 };
 
 Array.prototype.remove = function(from, to) {
-  this.splice(from, (to || from || 1) + (from < 0 ? this.length : 0));
-  return this.length;
+	var rest = this.slice((to || from) + 1 || this.length);
+	this.length = from < 0 ? this.length + from : from;
+	return this.push.apply(this, rest);
 };
 
 Array.prototype.removeItem = function(item) {
