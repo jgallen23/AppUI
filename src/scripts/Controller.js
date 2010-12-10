@@ -1,12 +1,12 @@
 var Controller = EventManager.extend({
 	useLiveClickEvents: true,
-	init: function(elementId) {
-		this.element = (typeof elementId === "string")?document.getElementById(elementId):elementId;
+	init: function(element) {
+		this.view = new View(element);
+		this.element = this.view.element;
 		if (this.useLiveClickEvents) {
             var self = this;
 			this.element.addEventListener(INPUT_EVENT, this); 
         }
-		this.view = new View(this.element);
 	},
 	handleEvent: function(e) {
 		var self = this;
