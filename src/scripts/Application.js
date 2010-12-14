@@ -1,14 +1,10 @@
 var Application = Controller.extend({
-	init: function(phoneGap) {
+	init: function() {
         window.APP = this;
 		this._super.apply(arguments);
-		this.browser = new Browser();
+		this.browser = browser;
 		var self = this;
 		this.data = {};
-
-		if (typeof phoneGap !== "undefined") {
-			self.browser.isPhoneGap = phoneGap;
-		}
 
 		if (self.browser.isPhoneGap) {
 			document.addEventListener("deviceready", function() { self.ready() }, false);
