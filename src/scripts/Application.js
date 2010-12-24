@@ -3,6 +3,7 @@ var Application = Controller.extend({
         window.APP = this;
 		this._super.apply(arguments);
 		this.browser = browser;
+		this.notificationCenter = new EventManager();
 		var self = this;
 		this.data = {};
 
