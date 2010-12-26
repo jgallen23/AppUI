@@ -25,6 +25,7 @@ js:
       - 'src/scripts/perftest.js'
       - 'src/scripts/EventManager.js'
       - 'src/scripts/Controller.js'
+      - 'src/scripts/PageController.js'
       - 'src/scripts/Application.js'
       - 'src/scripts/DataProvider.js'
       - 'src/scripts/View.js'
