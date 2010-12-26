@@ -13,11 +13,20 @@ var PageController = Controller.extend({
 	},
 	slideOut: function(controller) {
 		var delay = .3;
-		var x = this.element.clientWidth;
+		//var x = this.element.clientWidth;
 		//controller.element.style.left = -x+"px";
 		this.animate("translate3d(0, 0, 0)", delay);
 		controller.animate("translate3d(0, 0, 0)", delay);
 	},
 	slideDown: function() {
+		var delay = .3;
+		var y = document.body.clientHeight;
+		this.element.style.top = -y+"px";
+		this.animate("translate3d(0, "+y+"px, 0)", delay);
+	},
+	slideUp: function() {
+		var delay = .3;
+		//var y = document.body.clientHeight;
+		this.animate("translate3d(0, 0, 0)", delay);
 	}
 });
