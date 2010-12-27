@@ -1,5 +1,14 @@
 var PageController = Controller.extend({
-	animate: function(transform, delay) {
+	animate: function(transform, delay, cb) {
+		var self = this;
+		if (cb) {
+			var end = function() {
+				console.log("animation end");
+				cb();
+				self.element.removeEventListener("webkitTransitionEnd", end, false);
+			}
+			this.element.addEventListener("webkitTransitionEnd", end, false);
+		}
 		this.element.style.webkitTransition = "-webkit-transform "+(delay||.5)+"s ease-in-out";
 		this.element.style.webkitTransform = transform;
 	},
@@ -16,7 +25,10 @@ var PageController = Controller.extend({
 		//var x = this.element.clientWidth;
 		//controller.element.style.left = -x+"px";
 		this.animate("translate3d(0, 0, 0)", delay);
-		controller.animate("translate3d(0, 0, 0)", delay);
+		var self = this;
+		controller.animate("translate3d(0, 0, 0)", delay, function() {
+			self.element.style.left = "5000px";
+		});
 	},
 	slideDown: function() {
 		var delay = .3;
