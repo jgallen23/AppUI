@@ -11,8 +11,8 @@ var Controller = EventManager.extend({
 	handleEvent: function(e) {
 		var self = this;
 		if (e.type == "click") {
-			if (e.target.getAttribute('data-onClick') && self.onClick[e.target.getAttribute("data-onClick")]) {
-				self.onClick[e.target.getAttribute("data-onClick")].call(self, e);
+			if (e.target.getAttribute('data-action') && self.actions[e.target.getAttribute("data-action")]) {
+				self.actions[e.target.getAttribute("data-action")].call(self, e);
 			}
 		}
 	},

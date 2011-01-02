@@ -8,7 +8,7 @@ var SortableController = Controller.extend({
 		this.bindTriggers();	
 	},
 	bindTriggers: function() {
-		var triggers = this.view.findAll('[data-onClick=trigger]');
+		var triggers = this.view.findAll('[data-action=trigger]');
 		var self = this;
 		for (var i = 0; i < triggers.length; i++) {
 			(function(trigger) {
