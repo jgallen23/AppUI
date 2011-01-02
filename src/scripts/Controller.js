@@ -10,7 +10,7 @@ var Controller = EventManager.extend({
 	},
 	handleEvent: function(e) {
 		var self = this;
-		if (e.type == "click") {
+		if (e.type == "click" || e.type == "touchdown") {
 			if (e.target.getAttribute('data-action') && self.actions[e.target.getAttribute("data-action")]) {
 				self.actions[e.target.getAttribute("data-action")].call(self, e);
 			}

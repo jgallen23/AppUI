@@ -38,7 +38,10 @@ var PageController = Controller.extend({
 	},
 	slideUp: function() {
 		var delay = .3;
+		var self = this;
 		//var y = document.body.clientHeight;
-		this.animate("translate3d(0, 0, 0)", delay);
+		this.animate("translate3d(0, 0, 0)", delay, function() {
+			self.element.style.top = "-5000px";
+		});
 	}
 });
