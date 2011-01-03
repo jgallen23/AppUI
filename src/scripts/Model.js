@@ -22,11 +22,11 @@ var Model = EventManager.extend({
 		return this._data[prop];
 	},
 	_setProperty: function(prop, value) {
+		this._propertySet(prop, value, this._data[prop]);
 		this._data[prop] = value;
-		this._propertySet(prop, value);
 	},
-	_propertySet: function(prop, value) {
-		this.trigger("propertySet", [prop, value]);
+	_propertySet: function(prop, value, oldValue) {
+		this.trigger("propertySet", [prop, value, oldValue]);
 	},
 	__defineProperty__: function(key, getter, setter) {
 		this.__defineGetter__(key, getter);
