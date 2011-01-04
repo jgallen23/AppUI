@@ -1,10 +1,19 @@
 // Array.indexOf( value, begin, strict ) - Return index of the first element that matches value
+/*
 Array.prototype.indexOf = function( v, b, s ) {
 	for( var i = +b || 0, l = this.length; i < l; i++ ) {
 		if( this[i]===v || s && this[i]==v ) { return i; }
 	}
 	return -1;
 };
+Array.prototype.indexOf = function(obj) {
+	for (var i = 0; i < this.length; i++) {
+		if (obj == this[i])
+			return i;
+	}
+	return -1;
+};
+*/
 
 // Array.insert( index, value ) - Insert value at index, without overwriting existing keys
 Array.prototype.insert = function( i, v ) {
@@ -17,27 +26,24 @@ Array.prototype.insert = function( i, v ) {
 	}
 };
 
-Array.prototype.indexOf = function(obj) {
-	for (var i = 0; i < this.length; i++) {
-		if (obj == this[i])
-			return i;
-	}
-	return -1;
-};
-
+/* Use native forEach
 Array.prototype.each = function(f) {
 	for (var i = 0; i < this.length; i++) {
 		f(this[i], i);
 	}
 };
+*/
 
+/*
 Array.prototype.find = function(f) {
 	for (var i = 0; i < this.length; i++) {
 		if (f(this[i]))
 			return this[i];
 	}
 };
+*/
 
+/*
 Array.prototype.filter = function(f) {
 	var filter = [];
 	for (var i = 0; i < this.length; i++) {
@@ -46,6 +52,8 @@ Array.prototype.filter = function(f) {
 	}
 	return filter;
 };
+*/
+
 Array.prototype.contains = function(obj) {
 	for (var i = 0; i < this.length; i++) {
 		if (obj == this[i])
@@ -61,14 +69,16 @@ Array.prototype.clone = function() {
 	return clone;
 };
 
+/* use native splice 
 Array.prototype.remove = function(from, to) {
 	var rest = this.slice((to || from) + 1 || this.length);
 	this.length = from < 0 ? this.length + from : from;
 	return this.push.apply(this, rest);
 };
+*/
 
 Array.prototype.removeItem = function(item) {
-	return this.remove(this.indexOf(item));
+	return this.splice(this.indexOf(item), 1);
 }
 
 Array.prototype.extend = function(array) {
