@@ -9,9 +9,11 @@ js:
       - 'src/scripts/core/ui.browser.js'
       - 'src/scripts/core/ui.constants.js'
       - 'src/scripts/core/ui.template.js'
-      - 'src/scripts/utils/ui.perftest.js'
-      - 'src/scripts/utils/ui.querystring.js'
       - 'src/scripts/core/ui.eventManager.js'
+  app.utils:
+    files:
+      - 'src/scripts/utils/ui.querystring.js'
+      - 'src/scripts/utils/ui.perftest.js'
   app.mvc:
     inherit: 'app'
     files:
