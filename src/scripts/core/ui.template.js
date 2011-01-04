@@ -1,5 +1,6 @@
+(function() {
 var templateCache = {};
-var template = function tmpl(template, data){
+ui.template = function tmpl(template, data){
 	var fn = !/\W/.test(template) ?
 	  templateCache[template] = templateCache[template] ||
 		tmpl(document.getElementById(template).innerHTML) :
@@ -17,4 +18,4 @@ var template = function tmpl(template, data){
 	  + "');}return p.join('');");
 	return data ? fn( data ) : fn;
 };
-
+}());

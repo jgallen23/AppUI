@@ -1,4 +1,4 @@
-var SortableController = Controller.extend({
+ui.SortableController = ui.Controller.extend({
 	useLiveClickEvents: false,
 	init: function(elementId) {
 		this._super(elementId);

@@ -2,14 +2,15 @@ output_dir: 'lib'
 js:
   app:
     files:
-      - 'src/scripts/core/ui.class.js'
       - 'src/scripts/core/ui.core.js'
+      - 'src/scripts/core/ui.class.js'
       - 'src/scripts/core/ui.elem.js'
       - 'src/scripts/core/ui.array.js'
       - 'src/scripts/core/ui.browser.js'
       - 'src/scripts/core/ui.constants.js'
       - 'src/scripts/core/ui.template.js'
       - 'src/scripts/utils/ui.perftest.js'
+      - 'src/scripts/utils/ui.querystring.js'
       - 'src/scripts/core/ui.eventManager.js'
   app.mvc:
     inherit: 'app'

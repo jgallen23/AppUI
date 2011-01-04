@@ -1,4 +1,4 @@
-if (browser.isMobile) {
+if (ui.browser.isMobile) {
     INPUT_EVENT = "click";
 	INPUT_START_EVENT = "touchstart";
 	INPUT_MOVE_EVENT = "touchmove";

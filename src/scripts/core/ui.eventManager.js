@@ -1,4 +1,4 @@
-var EventManager = Class.extend({
+ui.EventManager = ui.Class.extend({
 	init: function() {
 
 	},
@@ -51,3 +51,4 @@ var EventManager = Class.extend({
 
     }
 });
+ui.notificationCenter = new ui.EventManager();

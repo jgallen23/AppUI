@@ -1,4 +1,4 @@
-var Controller = EventManager.extend({
+ui.Controller = ui.EventManager.extend({
 	useLiveClickEvents: true,
 	init: function(element) {
 		this.view = new View(element);

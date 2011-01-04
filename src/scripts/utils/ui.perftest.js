@@ -1,4 +1,4 @@
-var PerfTest = Class.extend({
+ui.utils.PerfTest = ui.Class.extend({
 	init: function(name) {
 		this.name = name;
 	},

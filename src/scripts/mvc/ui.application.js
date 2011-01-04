@@ -1,4 +1,4 @@
-var Application = Controller.extend({
+ui.Application = ui.Controller.extend({
 	init: function() {
         window.APP = this;
 		this._super.apply(arguments);

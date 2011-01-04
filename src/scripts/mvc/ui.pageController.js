@@ -1,4 +1,4 @@
-var PageController = Controller.extend({
+ui.PageController = ui.Controller.extend({
 	animate: function(transform, delay, cb) {
 		var self = this;
 		if (cb) {

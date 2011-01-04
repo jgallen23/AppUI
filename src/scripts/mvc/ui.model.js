@@ -1,4 +1,4 @@
-var Model = EventManager.extend({
+ui.Model = ui.EventManager.extend({
 	init: function(initial) {
 		if (!this._data) this._data = {};
 		if (initial) {

@@ -1,4 +1,4 @@
-var View = EventManager.extend({
+ui.View = ui.EventManager.extend({
 	init: function(element) {
 		this.element = (typeof element === "string")?document.getElementById(element):element;
 	},

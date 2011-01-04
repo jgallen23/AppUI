@@ -1,4 +1,4 @@
-var DataProvider = Class.extend({
+ui.DataProvider = ui.Class.extend({
 	init: function(key) {
 	},
 	get: function(cb) {

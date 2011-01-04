@@ -1,4 +1,4 @@
-var elem = {
+ui.elem = {
 	classRE: function(name) { return new RegExp("(^|\\s)"+name+"(\\s|$)") },
 	hasClass: function(el, name){
 		return this.classRE(name).test(el.className);
@@ -24,4 +24,4 @@ var elem = {
 			return el;
 		}
 	}
-}
+};

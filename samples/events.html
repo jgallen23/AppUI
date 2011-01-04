@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title></title>
+        <script src="../lib/app.mvc.js"></script>
+        <script>
+            ui.notificationCenter.bind("dummyEvent", function() {
+                console.log("dummy event triggered");
+            });
+            ui.notificationCenter.trigger("dummyEvent");
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
