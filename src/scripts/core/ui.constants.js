@@ -1,11 +1,13 @@
+(function() {
 if (ui.browser.isMobile) {
-    INPUT_EVENT = "click";
-	INPUT_START_EVENT = "touchstart";
-	INPUT_MOVE_EVENT = "touchmove";
-	INPUT_END_EVENT = "touchend";
+    ui.INPUT_EVENT = "click";
+	ui.INPUT_START_EVENT = "touchstart";
+	ui.INPUT_MOVE_EVENT = "touchmove";
+	ui.INPUT_END_EVENT = "touchend";
 } else {
-	INPUT_EVENT = "click";
-	INPUT_START_EVENT = "mousedown";
-	INPUT_MOVE_EVENT = "mousemove";
-	INPUT_END_EVENT = "mouseup";
+	ui.INPUT_EVENT = "click";
+	ui.INPUT_START_EVENT = "mousedown";
+	ui.INPUT_MOVE_EVENT = "mousemove";
+	ui.INPUT_END_EVENT = "mouseup";
 }
+}());
