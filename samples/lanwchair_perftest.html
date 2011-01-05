@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title></title>
+        <script src="../lib/app.lawnchair.js"></script>
+        <script>
+            var test1 = new Lawnchair({ table: 'test1', adaptor: 'webkit' });
+            var c = 30;
+            var run = function() {
+                for (var i = 0; i < c; i++) {
+                    test1.save({ i: i }, function(obj) {
+                        test1.all(function(data) {
+                            var d = document.createElement("div");
+                            d.innerHTML = obj.i;
+                            document.body.appendChild(d);
+                        });
+                    });
+                }
+            }
+            
+            ui.ready(function() {
+                var c = new ui.Controller(document.body);
+                c.actions = {
+                    run: function(e) {
+                        run();
+                    },
+                    nuke: function(e) {
+                        test1.nuke();
+                    }
+                }
+                run();    
+            });
+        </script>
+    </head>
+    <body>
+        <button data-action="run">Run</button>
+        <button data-action="nuke">Nuke</button>
+    </body>
+</html>
