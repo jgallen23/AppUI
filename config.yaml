@@ -7,6 +7,7 @@ js:
       - 'src/scripts/core/ui.elem.js'
       - 'src/scripts/core/ui.array.js'
       - 'src/scripts/core/ui.browser.js'
+      - 'src/scripts/core/ui.ready.js'
       - 'src/scripts/core/ui.constants.js'
       - 'src/scripts/core/ui.template.js'
       - 'src/scripts/core/ui.eventManager.js'
