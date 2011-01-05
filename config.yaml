@@ -31,6 +31,10 @@ js:
       - 'external/lawnchair/src/Lawnchair.js'
       - 'external/lawnchair/src/adaptors/LawnchairAdaptorHelpers.js'
       - 'src/scripts/mvc/ui.lawnchairModelData.js'
+  app.mobile:
+    inherit: 'app.lawnchair'
+    files:
+      - 'src/scripts/mobile/ui.mobile.core.js'
   app.sortable:
     files:
       - 'src/scripts/mvc/ui.sortableController.js'
