@@ -21,7 +21,6 @@ js:
     files:
       - 'src/scripts/mvc/ui.controller.js'
       - 'src/scripts/mvc/ui.pageController.js'
-      - 'src/scripts/mvc/ui.application.js'
       - 'src/scripts/mvc/ui.dataProvider.js'
       - 'src/scripts/mvc/ui.view.js'
       - 'src/scripts/mvc/ui.model.js'
