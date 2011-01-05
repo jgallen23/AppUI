@@ -10,6 +10,9 @@
             ui.ready(function() {
                 console.log("ready 2");
             });
+            ui.resize(function(width, height) {
+                console.log("resize", width, height);
+            });
         </script>
     </head>
     <body>
