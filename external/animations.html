@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title></title>
+        <script src="../lib/app.mvc.js"></script>
+        <style>
+            .box { height: 50px; width: 50px; background: red; }
+        </style>
+        <script>
+            ui.ready(function() {
+                var c = ui.Controller.extend({
+                    actions: {
+                        move: function(e) {
+                            ui.anim.transform(this.view.findAll(".box")[0], "translate3d(100px, 0, 0)", 0.5, function() {
+                                console.log("animation end");
+                            });
+                        },
+                        fade: function(e) {
+                            ui.anim.fade(this.view.findAll(".box")[1], 0, 0.5, function() {
+                                console.log("fade end");
+                            });
+                        }
+                    }
+                });
+                new c("Container");
+            });
+        </script>
+    </head>
+    <body>
+        <div id="Container">
+            <div class="box"></div>
+            <button data-action="move">Move</button>
+            <div class="box"></div>
+            <button data-action="fade">Fade Out</button>
+        </div>
+    </body>
+</html>

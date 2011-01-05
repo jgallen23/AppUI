@@ -6,6 +6,7 @@ js:
       - 'src/scripts/core/ui.class.js'
       - 'src/scripts/core/ui.eventManager.js'
       - 'src/scripts/core/ui.elem.js'
+      - 'src/scripts/core/ui.anim.js'
       - 'src/scripts/core/ui.array.js'
       - 'src/scripts/core/ui.browser.js'
       - 'src/scripts/core/ui.ready.js'

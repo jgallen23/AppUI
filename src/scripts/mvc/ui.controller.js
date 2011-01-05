@@ -1,11 +1,11 @@
 ui.Controller = ui.EventManager.extend({
 	useLiveClickEvents: true,
 	init: function(element) {
-		this.view = new View(element);
+		this.view = new ui.View(element);
 		this.element = this.view.element;
 		if (this.useLiveClickEvents) {
             var self = this;
-			this.element.addEventListener(INPUT_EVENT, this); 
+			this.element.addEventListener(ui.INPUT_EVENT, this); 
         }
 	},
 	handleEvent: function(e) {
@@ -32,25 +32,5 @@ ui.Controller = ui.EventManager.extend({
 	hide: function() {
 		this.view.hide();
 		this.trigger("hide");
-	},
-    animate: function(properties, cb) {
-		var self = this;
-		var endAnimate = function(event) {
-            console.log("end animation");
-			self.element[0].removeEventListener("webkitTransitionEnd", endAnimate, false);
-            return;
-			if (cb)
-				cb();
-		}
-
-
-		for (prop in properties) {
-			this.element.setStyle(prop, properties[prop]);
-		}
-		this.element[0].addEventListener("webkitTransitionEnd", endAnimate, false);
-    },
-	animateWithClass: function(className, properties, cb) {
-
-        this.animate(properties, cb);
 	}
 });
