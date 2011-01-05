@@ -1,2 +1,3 @@
 #!/bin/sh
+rm `dirname $0`/lib/*
 python `dirname $0`/external/uimin/uimin.py `dirname $0`/config.yaml
