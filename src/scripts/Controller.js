@@ -3,18 +3,27 @@ var Controller = EventManager.extend({
 	init: function(element) {
 		this.view = new View(element);
 		this.element = this.view.element;
+		this._eventsEnabled = true;
 		if (this.useLiveClickEvents) {
             var self = this;
 			this.element.addEventListener(INPUT_EVENT, this); 
         }
 	},
 	handleEvent: function(e) {
+		if (!this._eventsEnabled)
+			return;
 		var self = this;
 		if (e.type == "click" || e.type == "touchdown") {
 			if (e.target.getAttribute('data-action') && self.actions[e.target.getAttribute("data-action")]) {
 				self.actions[e.target.getAttribute("data-action")].call(self, e);
 			}
 		}
+	},
+	disableEvents: function() {
+		this._eventsEnabled = false;
+	},
+	enableEvents: function() {
+		this._eventsEnabled = true;
 	},
 	destroy: function() {
 		if (this.useLiveClickEvents) {
