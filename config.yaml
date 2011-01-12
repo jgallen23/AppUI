@@ -40,6 +40,12 @@ js:
   app.sortable:
     files:
       - 'src/scripts/SortableController.js'
+  app.persistence:
+    inherit: 'app'
+    files:
+      - 'external/persistencejs/lib/persistence.js'
+      - 'external/persistencejs/lib/persistence.store.sql.js'
+      - 'external/persistencejs/lib/persistence.store.websql.js'
   #jga:
     #plain: True
     #auto_version: False

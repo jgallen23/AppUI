@@ -4,3 +4,6 @@
 [submodule "external/uimin"]
 	path = external/uimin
 	url = git://github.com/jgallen23/uimin.git
+[submodule "external/persistencejs"]
+	path = external/persistencejs
+	url = https://github.com/zefhemel/persistencejs.git
