@@ -25,6 +25,12 @@ js:
       - 'src/scripts/mvc/ui.dataProvider.js'
       - 'src/scripts/mvc/ui.view.js'
       - 'src/scripts/mvc/ui.model.js'
+  app.persistence:
+    inherit: 'app.mvc'
+    files:
+      - 'external/persistencejs/lib/persistence.js'
+      - 'external/persistencejs/lib/persistence.store.sql.js'
+      - 'external/persistencejs/lib/persistence.store.websql.js'
   app.lawnchair:
     inherit: 'app.mvc'
     files:
