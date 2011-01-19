@@ -1,12 +1,12 @@
 ui.Controller = ui.EventManager.extend({
 	useLiveClickEvents: true,
 	init: function(element) {
-		this.view = new ui.View(element);
-		this.element = this.view.element;
+        if (!this.view)
+            this.view = new ui.View(element);
 		this._processEvents = true;
 		if (this.useLiveClickEvents) {
             var self = this;
-			this.element.addEventListener(ui.INPUT_EVENT, this); 
+			this.view.element.addEventListener(ui.INPUT_EVENT, this); 
         }
 	},
 	handleEvent: function(e) {
@@ -14,8 +14,8 @@ ui.Controller = ui.EventManager.extend({
 			return;
 		var self = this;
 		if (e.type == "click" || e.type == "touchdown") {
-			if (e.target.getAttribute('data-action') && self.actions[e.target.getAttribute("data-action")]) {
-				self.actions[e.target.getAttribute("data-action")].call(self, e);
+			if (e.target.getAttribute('data-action') && self[e.target.getAttribute("data-action")]) {
+				self[e.target.getAttribute("data-action")].call(self, e);
 			}
 		}
 	},
@@ -27,7 +27,7 @@ ui.Controller = ui.EventManager.extend({
 	},
 	destroy: function() {
 		if (this.useLiveClickEvents) {
-			this.element.removeEventListener(INPUT_EVENT, this);
+			this.view.element.removeEventListener(INPUT_EVENT, this);
 		}
 		this._super();
 		this.trigger("destroy");

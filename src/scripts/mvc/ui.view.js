@@ -4,7 +4,7 @@ ui.View = ui.EventManager.extend({
 	},
 	renderAt: function(element, templateId, data) {
 		element = (typeof element === "string")?this.find(element):element;
-		var tmp = template(templateId, data);
+		var tmp = ui.template(templateId, data);
 		element.innerHTML = tmp;
 	},
 	render: function(templateId, data) {
