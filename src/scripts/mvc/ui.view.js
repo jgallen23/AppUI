@@ -22,6 +22,9 @@ ui.View = ui.EventManager.extend({
 		}
 		return items;
 	},
+	animate: function(transform, delay, cb) {
+        ui.anim.transform(this.element, transform, delay, cb);
+	},
 	remove: function() {
 		//TODO: unbind all events
 		this.element.innerHTML = "";
