@@ -27,7 +27,7 @@ ui.Controller = ui.EventManager.extend({
 	},
 	destroy: function() {
 		if (this.useLiveClickEvents) {
-			this.view.element.removeEventListener(INPUT_EVENT, this);
+			this.view.element.removeEventListener(ui.INPUT_EVENT, this);
 		}
 		this._super();
 		this.trigger("destroy");

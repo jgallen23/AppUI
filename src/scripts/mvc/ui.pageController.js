@@ -13,6 +13,7 @@ ui.PageController = ui.Controller.extend({
 		var self = this;
 		this.previousController.view.animate("translate3d(0, 0, 0)", delay, function() {
             self.previousController.trigger('visible');
+			self.destroy();
 		});
 	},
 	slideDown: function() {
