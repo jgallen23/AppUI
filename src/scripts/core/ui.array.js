@@ -1,12 +1,13 @@
+ui.arr = {};
 // Array.indexOf( value, begin, strict ) - Return index of the first element that matches value
 /*
-Array.prototype.indexOf = function( v, b, s ) {
+ui.arr.indexOf = function( v, b, s ) {
 	for( var i = +b || 0, l = this.length; i < l; i++ ) {
 		if( this[i]===v || s && this[i]==v ) { return i; }
 	}
 	return -1;
 };
-Array.prototype.indexOf = function(obj) {
+ui.arr.indexOf = function(obj) {
 	for (var i = 0; i < this.length; i++) {
 		if (obj == this[i])
 			return i;
@@ -16,7 +17,7 @@ Array.prototype.indexOf = function(obj) {
 */
 
 // Array.insert( index, value ) - Insert value at index, without overwriting existing keys
-Array.prototype.insert = function( i, v ) {
+ui.arr.insert = function( i, v ) {
 	if (this.length == 0)
 		return [v];
 	if( i>=0 ) {
@@ -27,7 +28,7 @@ Array.prototype.insert = function( i, v ) {
 };
 
 /* Use native forEach
-Array.prototype.each = function(f) {
+ui.arr.each = function(f) {
 	for (var i = 0; i < this.length; i++) {
 		f(this[i], i);
 	}
@@ -35,7 +36,7 @@ Array.prototype.each = function(f) {
 */
 
 /*
-Array.prototype.find = function(f) {
+ui.arr.find = function(f) {
 	for (var i = 0; i < this.length; i++) {
 		if (f(this[i]))
 			return this[i];
@@ -44,7 +45,7 @@ Array.prototype.find = function(f) {
 */
 
 /*
-Array.prototype.filter = function(f) {
+ui.arr.filter = function(f) {
 	var filter = [];
 	for (var i = 0; i < this.length; i++) {
 		if (f(this[i]))
@@ -54,14 +55,14 @@ Array.prototype.filter = function(f) {
 };
 */
 
-Array.prototype.contains = function(obj) {
+ui.arr.contains = function(obj) {
 	for (var i = 0; i < this.length; i++) {
 		if (obj == this[i])
 			return true;
 	}
 };
 
-Array.prototype.clone = function() {
+ui.arr.clone = function() {
 	var clone = [];
 	for (var i = 0; i < this.length; i++) {
 		clone.push(this[i]);
@@ -70,23 +71,23 @@ Array.prototype.clone = function() {
 };
 
 /* use native splice 
-Array.prototype.remove = function(from, to) {
+ui.arr.remove = function(from, to) {
 	var rest = this.slice((to || from) + 1 || this.length);
 	this.length = from < 0 ? this.length + from : from;
 	return this.push.apply(this, rest);
 };
 */
 
-Array.prototype.removeItem = function(item) {
+ui.arr.removeItem = function(item) {
 	return this.splice(this.indexOf(item), 1);
 }
 
-Array.prototype.extend = function(array) {
+ui.arr.extend = function(array) {
 	for (var i = 0; i < array.length; i++) {
 		this.push(array[i]);
 	}
 }
 
-Array.prototype.last = function() {
+ui.arr.last = function() {
 	return this[this.length - 1];
 }
