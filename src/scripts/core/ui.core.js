@@ -36,6 +36,11 @@ ui.stringFormat = function( text )
     return text;
 };
 
-ui.find = function(selector) {
-    return document.querySelectorAll(selector);
+ui.find = function(selector, f) {
+    var nodes = document.querySelectorAll(selector);
+	if (f) {
+		for (var i = 0, c = nodes.length; i < c; i++) {
+			f(nodes[i]);	
+		}
+	}
 };
