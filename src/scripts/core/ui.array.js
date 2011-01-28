@@ -17,11 +17,11 @@ ui.arr.indexOf = function(obj) {
 */
 
 // Array.insert( index, value ) - Insert value at index, without overwriting existing keys
-ui.arr.insert = function( i, v ) {
-	if (this.length == 0)
+ui.arr.insert = function(arr, i, v ) {
+	if (arr.length == 0)
 		return [v];
 	if( i>=0 ) {
-		var a = this.slice(), b = a.splice( i );
+		var a = arr.slice(), b = a.splice( i );
 		a[i] = v;
 		return a.concat( b );
 	}
@@ -55,17 +55,17 @@ ui.arr.filter = function(f) {
 };
 */
 
-ui.arr.contains = function(obj) {
-	for (var i = 0; i < this.length; i++) {
-		if (obj == this[i])
+ui.arr.contains = function(arr, obj) {
+	for (var i = 0; i < arr.length; i++) {
+		if (obj == arr[i])
 			return true;
 	}
 };
 
-ui.arr.clone = function() {
+ui.arr.clone = function(arr) {
 	var clone = [];
-	for (var i = 0; i < this.length; i++) {
-		clone.push(this[i]);
+	for (var i = 0; i < arr.length; i++) {
+		clone.push(arr[i]);
 	}
 	return clone;
 };
@@ -78,16 +78,16 @@ ui.arr.remove = function(from, to) {
 };
 */
 
-ui.arr.removeItem = function(item) {
-	return this.splice(this.indexOf(item), 1);
+ui.arr.removeItem = function(arr, item) {
+	return arr.splice(arr.indexOf(item), 1);
 }
 
-ui.arr.extend = function(array) {
+ui.arr.extend = function(arr, array) {
 	for (var i = 0; i < array.length; i++) {
-		this.push(array[i]);
+		arr.push(array[i]);
 	}
 }
 
-ui.arr.last = function() {
-	return this[this.length - 1];
+ui.arr.last = function(arr) {
+	return arr[arr.length - 1];
 }
