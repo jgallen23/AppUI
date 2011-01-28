@@ -13,9 +13,10 @@ ui.Controller = ui.EventManager.extend({
 		if (!this._processEvents)
 			return;
 		var self = this;
-		if (e.type == "click" || e.type == "touchdown") {
-			if (e.target.getAttribute('data-action') && self[e.target.getAttribute("data-action")]) {
-				self[e.target.getAttribute("data-action")].call(self, e);
+		if (e.type == ui.INPUT_EVENT) {
+			var target = (e.target.nodeType == 1)?e.target:e.target.parentNode;
+			if (target.getAttribute('data-action') && self[target.getAttribute("data-action")]) {
+				self[target.getAttribute("data-action")].call(self, e);
 			}
 		}
 	},
