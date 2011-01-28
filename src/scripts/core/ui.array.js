@@ -80,14 +80,14 @@ ui.arr.remove = function(from, to) {
 
 ui.arr.removeItem = function(arr, item) {
 	return arr.splice(arr.indexOf(item), 1);
-}
+};
 
 ui.arr.extend = function(arr, array) {
 	for (var i = 0; i < array.length; i++) {
 		arr.push(array[i]);
 	}
-}
+};
 
 ui.arr.last = function(arr) {
 	return arr[arr.length - 1];
-}
+};
