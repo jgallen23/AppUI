@@ -16,7 +16,7 @@ ui.Controller = ui.EventManager.extend({
 		if (e.type == ui.INPUT_EVENT) {
 			var target = (e.target.nodeType == 1)?e.target:e.target.parentNode;
 			if (target.getAttribute('data-action') && self[target.getAttribute("data-action")]) {
-				self[target.getAttribute("data-action")].call(self, e);
+				self[target.getAttribute("data-action")].call(self, e, target);
 			}
 		}
 	},
