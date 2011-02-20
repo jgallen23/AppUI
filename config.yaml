@@ -42,6 +42,7 @@ js:
     inherit: 'app.persistence'
     files:
       - 'src/scripts/mobile/ui.mobile.core.js'
+      - 'src/scripts/mobile/ui.mobile.touchclick.js'
   app.sortable:
     files:
       - 'src/scripts/mvc/ui.sortableController.js'

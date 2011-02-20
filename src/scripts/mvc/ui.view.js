@@ -2,6 +2,9 @@ ui.View = ui.EventManager.extend({
 	init: function(element) {
 		this.element = (typeof element === "string")?document.getElementById(element):element;
 	},
+	destroy: function() {
+		this._super();
+	},
 	renderAt: function(element, templateId, data) {
 		element = (typeof element === "string")?this.find(element):element;
 		var tmp = ui.template(templateId, data);
