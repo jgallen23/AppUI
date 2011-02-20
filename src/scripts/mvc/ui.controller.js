@@ -12,7 +12,6 @@ ui.Controller = ui.EventManager.extend({
         }
 	},
 	handleEvent: function(e) {
-		console.log(e.type);
 		if (!this._processEvents)
 			return;
 		var self = this;
