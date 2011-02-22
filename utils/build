@@ -1,0 +1,11 @@
+#!/bin/sh
+git submodule update --init --recursive
+pushd ext/appui
+sh build app.mobile
+popd
+cp ext/appui/lib/* www/ui/compressed/
+#cp ext/phonegap-plugins/iPhone/LocalNotification/LocalNotification.js www/ui/scripts/phonegap/
+#cp ext/phonegap-plugins/iPhone/Badge/Badge.js www/ui/scripts/phonegap/
+#python ext/sprite_generator/sprite_generator.py sprites.yaml
+python ext/appui/external/uimin/uimin.py -f config.yaml
+python run_server.py generate www/index.html

@@ -22,24 +22,22 @@ js:
     files:
       - 'src/scripts/mvc/ui.controller.js'
       - 'src/scripts/mvc/ui.pageController.js'
-      - 'src/scripts/mvc/ui.dataProvider.js'
       - 'src/scripts/mvc/ui.view.js'
-      - 'src/scripts/mvc/ui.model.js'
   app.persistence:
-    inherit: 'app.mvc'
     files:
       - 'external/persistencejs/lib/persistence.js'
       - 'external/persistencejs/lib/persistence.store.sql.js'
       - 'external/persistencejs/lib/persistence.store.websql.js'
   app.lawnchair:
-    inherit: 'app.mvc'
     files:
+      - 'src/scripts/mvc/ui.dataProvider.js'
+      - 'src/scripts/mvc/ui.lawnchairModelData.js'
+      - 'src/scripts/mvc/ui.lawnchairModel.js'
       - 'external/lawnchair/src/adaptors/WebkitSQLiteAdaptor.js'
       - 'external/lawnchair/src/Lawnchair.js'
       - 'external/lawnchair/src/adaptors/LawnchairAdaptorHelpers.js'
-      - 'src/scripts/mvc/ui.lawnchairModelData.js'
   app.mobile:
-    inherit: 'app.persistence'
+    inherit: 'app.mvc'
     files:
       - 'src/scripts/mobile/ui.mobile.core.js'
       - 'src/scripts/mobile/ui.mobile.touchclick.js'
