@@ -2,7 +2,7 @@ ui.Model = ui.EventManager.extend({
 	init: function(initial) {
 		if (!this._data) this._data = {};
 		if (initial) {
-			extendObjStrict(this._data, initial);
+			ui.extendStrict(this._data, initial);
 		}
 		this.id = '';
 
