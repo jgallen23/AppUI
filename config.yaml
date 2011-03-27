@@ -40,7 +40,9 @@ js:
     inherit: 'app.mvc'
     files:
       - 'src/scripts/mobile/ui.mobile.core.js'
+      - 'src/scripts/mobile/ui.mobile.orientationChanged.js'
       - 'src/scripts/mobile/ui.mobile.touchclick.js'
+      - 'src/scripts/mobile/ui.mobile.weinre.js'
   app.sortable:
     files:
       - 'src/scripts/mvc/ui.sortableController.js'
